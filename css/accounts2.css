@@ -1,0 +1,199 @@
+/* ====================================================================== */
+/* === 1. Định dạng Giá Tiền Nâng Cấp (Sharp, High Contrast, Impact) === */
+/* ====================================================================== */
+.card .card-text.fw-bold.text-danger.fs-4 {
+    /* Màu Đen Sâu hơn (Gần như đen tuyền) để tương phản tối đa */
+    color: #0d1117 !important; 
+    
+    font-size: 1.5rem !important; 
+    font-weight: 800 !important; 
+    letter-spacing: -0.7px; 
+    
+    /* text-shadow: Loại bỏ bóng mờ nhẹ, tập trung vào độ sắc nét của chữ */
+    text-shadow: none; 
+    
+    margin-top: auto; 
+    margin-bottom: 1rem !important;
+    
+    /* Chuyển động mượt mà hơn với hàm thời gian 'cubic-bezier' tùy chỉnh */
+    transition: color 0.35s cubic-bezier(0.2, 0.8, 0.4, 1), 
+                transform 0.35s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+/* Hiệu ứng giá khi Card được hover */
+.card:hover .card-text.fw-bold.text-danger.fs-4 {
+    /* Màu thương hiệu: Vẫn là xanh chủ đạo, nhưng có thể dùng màu tươi hơn nếu muốn nổi bật */
+    color: #0a58ca !important; /* Xanh đậm hơn chút, tạo chiều sâu */
+    /* Nổi bật hơn nữa bằng cách dịch chuyển nhẹ */
+    transform: translateY(-3px) scale(1.02); /* Dịch chuyển nhiều hơn một chút */
+}
+
+/* ====================================================================== */
+/* === 2. Badge ID Góc (Elevated & Clean) === */
+/* ====================================================================== */
+
+.card {
+    position: relative; 
+    overflow: hidden; 
+    /* Nâng cấp bóng đổ: Bóng đổ sâu hơn và lan tỏa hơn, tạo cảm giác 'nổi' ngay cả khi không hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); 
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+    border-radius: 12px; /* Thêm bo góc cho Card để đồng bộ */
+}
+
+/* Hiệu ứng nổi nhẹ cho Card khi hover */
+.card:hover {
+    transform: translateY(-8px); /* Nâng Card lên nhiều hơn để hiệu ứng rõ rệt */
+    /* Bóng đổ khi hover: Rất rõ ràng, tập trung vào chiều sâu */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); 
+}
+
+.card .account-id-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    background-color: #007bff; 
+    color: #fff;
+    
+    font-size: 0.85rem; 
+    font-weight: 700;
+    
+    padding: 7px 18px; 
+    border-top-left-radius: 12px; 
+    border-bottom-right-radius: 16px; 
+    
+    z-index: 15; 
+    /* Bóng đổ cho Badge: Bóng sâu và tối để tạo sự tách biệt rõ rệt với Card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+    /* Tăng cường hiệu ứng 'spring' (nảy) để mượt mà và sống động hơn */
+    transition: transform 0.5s cubic-bezier(0.3, 1.8, 0.6, 1.2); /* Hàm nảy mạnh */
+}
+
+/* Hiệu ứng nổi và dịch chuyển nhẹ khi hover Card */
+.card:hover .account-id-badge {
+    transform: translate(-5px, -5px); /* Dịch chuyển nhiều hơn ra khỏi góc */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Bóng đổ mạnh hơn khi nổi */
+}
+
+/* ====================================================================== */
+/* === 1. Filter Panel (Khung chính) === */
+/* ====================================================================== */
+.filter-panel {
+    /* Nền Panel: Trắng tinh khiết, bóng đổ mỏng */
+    background-color: #f7f9fc !important; /* Nền xám rất nhạt */
+    border: 1px solid #e0e6ec; /* Viền sáng */
+    border-radius: 18px; /* Bo góc lớn, cao cấp */
+    padding: 25px 30px !important; /* Tăng padding để Panel rộng rãi hơn */
+    
+    /* Bóng đổ nhẹ nhàng, tạo cảm giác Panel nổi lên */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), /* Bóng đổ lớn */
+                0 0 0 1px rgba(0, 0, 0, 0.02); /* Viền mỏng */
+}
+
+/* ====================================================================== */
+/* === 2. Form Control (Input Khắc Chìm - Embossed/Inner Shadow) === */
+/* ====================================================================== */
+.filter-panel .form-control,
+.filter-panel .input-group-text {
+    background-color: #ffffff;
+    border: none; /* Bỏ viền Bootstrap mặc định */
+    border-radius: 10px; 
+    
+    /* Hiệu ứng VIP Pro: Bóng đổ bên trong (Inner Shadow) tạo cảm giác khắc chìm */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), /* Bóng đậm ở trên */
+                inset 0 0 0 1px rgba(255, 255, 255, 0.5); /* Viền sáng giả */
+    
+    transition: all 0.3s ease;
+}
+
+/* Tinh chỉnh input group text cho đồng bộ */
+.filter-panel .input-group-text {
+    background-color: #e9ecef; /* Màu nền hơi khác để phân biệt */
+    font-weight: 500;
+}
+
+/* Hiệu ứng Focus (Khi nhập liệu): Bóng đổ bên trong biến mất, thay bằng viền nổi bật */
+.filter-panel .form-control:focus {
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.3); /* Vòng sáng màu xanh */
+    background-color: #ffffff;
+    outline: none;
+}
+
+/* ====================================================================== */
+/* === 3. Nút Hành Động (3D Gradient Buttons) === */
+/* ====================================================================== */
+
+/* Nhóm Nút */
+.filter-actions-group {
+    /* Đảm bảo chiều cao nút khớp với input */
+    height: 48px; 
+}
+
+/* Nút Áp dụng Lọc (VIP Primary) */
+.btn-filter-vip {
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 700;
+    
+    /* Màu nền Gradient 3D */
+    background: linear-gradient(135deg, #0d6efd 0%, #007bff 100%) !important;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4); /* Bóng đổ nổi bật */
+    transition: all 0.3s ease;
+}
+
+.btn-filter-vip:hover {
+    transform: translateY(-2px); /* Nổi nhẹ khi hover */
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+    filter: brightness(1.1);
+}
+
+/* Nút Đặt lại (Siêu cấp Secondary) */
+.btn-filter-reset {
+    /* Đặt lại là nút outline nhẹ nhàng hơn */
+    background-color: #fff !important;
+    color: #6c757d !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.btn-filter-reset:hover {
+    color: #495057 !important;
+    background-color: #e9ecef !important;
+    transform: translateY(-1px);
+}
+
+/* ====================================================================== */
+/* === EROR === */
+.no-results-message {
+    /* Đảm bảo style này áp dụng cho phần tử p của bạn */
+    
+    /* Vị trí và Kích thước */
+    display: block; 
+    width: 100%;
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+    padding: 18px 25px; /* Giảm padding một chút */
+    
+    /* Màu sắc và Nền: Chuyển sang màu đỏ/hồng nhạt (Blush Red) */
+    background-color: #f8d7da; /* Màu nền đỏ rất nhạt (Màu alert-danger-light) */
+    /* Dùng Gradient nhẹ để tạo chiều sâu */
+    background-image: linear-gradient(135deg, #fffafa 0%, #f8d7da 100%); 
+    
+    color: #842029; /* Màu chữ đỏ đậm (tương phản vừa phải) */
+    
+    /* Hình dáng và Bóng đổ (Mềm mại) */
+    border: 1px solid #f5c2c7; /* Viền mỏng cùng tông màu */
+    border-radius: 14px; /* Bo góc mềm mại hơn */
+    font-size: 1.35rem !important; /* Kích thước vừa phải */
+    font-weight: 600; /* Đậm vừa */
+    text-align: center;
+    
+    /* Bóng đổ nhẹ nhàng, không gây chói */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
+    
+    /* Hiệu ứng chữ: Loại bỏ bóng chữ để chữ sắc nét hơn */
+    text-shadow: none; 
+}

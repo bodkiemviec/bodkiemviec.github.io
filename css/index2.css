@@ -1,0 +1,286 @@
+/* --- NAVBAR CHUẨN SHOP - NỀN TRẮNG / XÁM NHẠT (Nâng cấp) --- */
+.shop-navbar {
+    background-color: rgba(255, 255, 255, 0.95); /* Trắng trong suốt nhẹ */
+    /* Đổ bóng mỏng, tinh tế hơn */
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.05); 
+    padding: 0.8rem 1.5rem; /* Padding rộng hơn */
+    /* Hiệu ứng trong suốt/mờ ảo (Glassmorphism nhẹ) */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); 
+    position: sticky; /* Giữ navbar ở trên cùng */
+    top: 0;
+    z-index: 1020;
+    transition: background-color 0.3s ease;
+}
+
+/* Thương hiệu */
+.shop-navbar .navbar-brand {
+    color: #0d6efd; 
+    font-size: 1.6rem; /* Lớn hơn */
+    font-weight: 700;
+    letter-spacing: -0.5px; /* Giảm khoảng cách chữ */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover thương hiệu */
+.shop-navbar .navbar-brand:hover {
+    color: #0b5ed7;
+    transform: translateY(-2px); /* Nổi nhẹ */
+}
+
+/* Menu link */
+.shop-navbar .nav-link {
+    color: #343a40; /* Đen đậm hơn để tương phản tốt */
+    font-weight: 500;
+    transition: color 0.3s, background 0.3s;
+    padding: 0.5rem 1rem; /* Padding rộng hơn */
+    border-radius: 8px;
+    position: relative; /* Cho hiệu ứng underline */
+}
+
+/* Hiệu ứng gạch chân (Underline) từ hai bên vào */
+.shop-navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #0d6efd;
+    transition: width 0.3s ease-out, left 0.3s ease-out;
+}
+
+/* Hover menu link */
+.shop-navbar .nav-link:hover {
+    background-color: transparent; /* Bỏ background-color khi hover, chỉ dùng hiệu ứng gạch chân */
+    color: #0d6efd;
+}
+.shop-navbar .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Link active */
+.shop-navbar .nav-link.active {
+    color: #0d6efd;
+    font-weight: 600;
+}
+.shop-navbar .nav-link.active::after {
+    width: 100%;
+    left: 0;
+}
+
+/* --- HEADER CHO SHOP BÁN HÀNG (Nâng cấp) --- */
+.shop-header {
+    background: linear-gradient(135deg, #f0f4f7, #e8ecf1); /* Gradient xám nhẹ */
+    padding: 5rem 1rem; /* Padding lớn hơn để tạo không gian thoáng */
+    margin-bottom: 3rem;
+    border-radius: 16px; /* Bo góc lớn hơn */
+    /* Đổ bóng Neumorphism nhẹ nhàng */
+    box-shadow: 8px 8px 16px rgba(174, 174, 192, 0.4), -8px -8px 16px rgba(255, 255, 255, 0.6);
+    text-align: center; /* Đảm bảo nội dung nằm giữa */
+}
+
+/* Tiêu đề chính */
+.shop-title {
+    font-size: 2.8rem; /* Lớn hơn, uy lực hơn */
+    font-weight: 800; /* Cực đậm */
+    color: #212529; 
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+    /* Hiệu ứng ánh sáng nhẹ */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Hover tiêu đề (Hiệu ứng nhún nhẹ) */
+.shop-title:hover {
+    transform: translateY(-3px) scale(1.01);
+    color: #0d6efd; /* Đổi màu khi hover để nhấn mạnh */
+}
+
+/* Subtitle */
+.shop-subtitle {
+    font-size: 1.15rem;
+    color: #6c757d; 
+    max-width: 800px; /* Rộng hơn */
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Nổi bật tên miền */
+.shop-subtitle span {
+    color: #0d6efd; 
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .shop-header { padding: 3rem 1rem; }
+    .shop-title { font-size: 2rem; }
+}
+
+/* --- CARD SHOP ROBLOX (Nâng cấp) --- */
+.card {
+    border-radius: 16px; /* Bo góc lớn hơn */
+    overflow: hidden;
+    /* Transition mượt mà hơn */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: none; /* Bỏ border */
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Bóng mặc định nhẹ */
+    cursor: pointer;
+}
+
+/* Hover: nâng card + shadow sâu hơn + viền nhẹ */
+.card:hover {
+    transform: translateY(-8px); /* Nâng cao hơn */
+    /* Bóng đổ sâu, rõ nét và có ánh sáng nhẹ */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2), 0 0 0 3px #0d6efd; /* Thêm viền phát sáng (glow) */
+}
+
+/* Click / active card (Hiệu ứng nhấn chìm 3D) */
+.card:active {
+    transform: translateY(-2px) scale(0.99); 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Ảnh sản phẩm */
+.card img {
+    width: 100%;
+    height: 200px; /* Chiều cao cố định cho ảnh để đồng bộ */
+    object-fit: cover;
+    transition: transform 0.4s ease-out;
+}
+
+/* Ảnh phóng to nhẹ hơn khi hover card */
+.card:hover img {
+    transform: scale(1.05); 
+}
+
+/* Card body */
+.card-body {
+    padding: 1.25rem;
+    text-align: center;
+}
+
+/* Tiêu đề card */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #212529;
+    /* Hiệu ứng đổi màu nhẹ khi hover */
+    transition: color 0.3s ease;
+}
+.card:hover .card-title {
+    color: #0d6efd;
+}
+
+/* Button */
+.card .btn {
+    border-radius: 10px; /* Bo góc lớn hơn */
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: background-color .3s, transform .3s, box-shadow .3s;
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+}
+
+/* Hover button (Hiệu ứng "Pop" nổi bật) */
+.card .btn:hover {
+    background-color: #0b5ed7; 
+    transform: scale(1.05) translateY(-2px); /* Nâng nhẹ hơn */
+    box-shadow: 0 6px 15px rgba(13, 110, 253, 0.4); /* Bóng xanh mạnh */
+}
+
+/* --- FOOTER 3 CỘT – NỀN SÁNG TỐI, CHỮ ĐEN, LINK XANH (Nâng cấp) --- */
+.shop-footer {
+    background-color: #ffffff; /* Trắng tinh khiết */
+    color: #343a40; /* Chữ đen đậm hơn */
+    border-top: 1px solid #f0f0f0; 
+    font-size: 0.95rem;
+    padding-top: 50px; /* Padding lớn hơn */
+    padding-bottom: 50px; /* Padding lớn hơn */
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.03); /* Bóng đổ ngược nhẹ */
+}
+
+/* Tiêu đề cột */
+.footer-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #212529; 
+    margin-bottom: 1.5rem; /* Khoảng cách lớn hơn */
+    border-bottom: 2px solid #0d6efd; /* Gạch chân tiêu đề */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Danh sách link */
+.footer-list li {
+    margin-bottom: 0.75rem; /* Khoảng cách lớn hơn */
+}
+.footer-list li a {
+    color: #343a40; /* Mặc định link đen để tương phản */
+    text-decoration: none;
+    transition: color .25s, padding-left .25s;
+    position: relative;
+    padding-left: 15px; /* Tạo không gian cho icon/mũi tên */
+}
+
+/* Icon / Mũi tên trước link */
+.footer-list li a::before {
+    content: '›'; /* Dấu mũi tên tinh tế */
+    color: #0d6efd;
+    position: absolute;
+    left: 0;
+    transition: transform 0.25s ease;
+    font-weight: 700;
+}
+
+.footer-list li a:hover {
+    color: #0d6efd; /* Link đổi thành xanh khi hover */
+    padding-left: 18px; /* Dịch chuyển nhẹ khi hover */
+}
+.footer-list li a:hover::before {
+    transform: translateX(3px); /* Dịch chuyển mũi tên */
+}
+
+/* Liên hệ & bản quyền */
+.footer-contact p {
+    color: #5c636a; 
+}
+.shop-footer a {
+    color: #0d6efd; 
+    font-weight: 600;
+}
+/* --- HIỆU ỨNG TỐI GIẢN MÀ NỔI BẬT CHO TIÊU ĐỀ SECTION (Không Gạch Chân) --- */
+.section-title {
+    /* Đảm bảo chữ nổi bật và to */
+    font-size: 2.3rem; 
+    font-weight: 700; 
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem; /* Giữ khoảng cách dưới */
+    position: relative;
+    display: block; 
+    
+    color: #212529; /* Màu chữ đen đậm, tương phản cao */
+    letter-spacing: 0.5px; 
+    
+    /* Hiệu ứng đổ bóng chữ nhẹ, tạo chiều sâu 3D tinh tế */
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.05); 
+    
+    /* Transition cho hiệu ứng tương tác nhẹ */
+    transition: color 0.4s ease-out, transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* HIỆU ỨNG HOVER TINH TẾ (Nổi nhẹ và Đổi màu) */
+.section-title:hover {
+    color: #0d6efd; /* Chữ đổi sang màu xanh chủ đạo */
+    /* Nâng nhẹ và nhún */
+    transform: translateY(-4px) scale(1.01); 
+    
+    /* Thêm shadow nhẹ khi hover để chữ 'nổi' khỏi nền */
+    text-shadow: 0 5px 10px rgba(13, 110, 253, 0.2); 
+}
